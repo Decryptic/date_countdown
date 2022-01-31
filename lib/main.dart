@@ -12,7 +12,7 @@ class DateCountdown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       title: _title,
       theme: ThemeData(
         primarySwatch: Colors.green,
@@ -50,8 +50,8 @@ class _MainActivityState extends State<MainActivity> {
   
   // for some reason, there is a 0 difference between today
   // and tomorrow, so I had to swing some code golf
-  Text get countdown {
-    var now = DateTime.now();
+  Text get _countdown {
+    final now = DateTime.now();
     var diff = _selectedDate.difference(now).inDays;
     var until = 'until';
     if (diff < 0) {
@@ -74,14 +74,14 @@ class _MainActivityState extends State<MainActivity> {
   
   // this is to rerender the CuptertinoDatePicker
   // since it only has initialDateTime and no date setter
-  Key get datePickerKey {
+  Key get _datePickerKey {
     if (_dateLoaded)
       return Key('CDP0');
     return UniqueKey();
   }
 
-  CupertinoDatePicker get datePicker => CupertinoDatePicker(
-    key: datePickerKey,
+  CupertinoDatePicker get _datePicker => CupertinoDatePicker(
+    key: _datePickerKey,
     mode: CupertinoDatePickerMode.date,
     onDateTimeChanged: (DateTime dateTime) {
       setState(() {
@@ -134,12 +134,12 @@ class _MainActivityState extends State<MainActivity> {
             const Spacer(flex: 2),
             Expanded(
               flex: 1,
-              child: countdown,
+              child: _countdown,
             ),
             const Spacer(),
             Expanded(
               flex: 5,
-              child: datePicker,
+              child: _datePicker,
             ),
             const Spacer(),
             Expanded(
