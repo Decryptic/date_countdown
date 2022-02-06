@@ -37,7 +37,7 @@ class _MainActivityState extends State<MainActivity> {
   late final SharedPreferences _prefs;
   bool _dateLoaded = false;
   
-  void _loadDate() async{
+  void _loadDate() async {
     _prefs = await SharedPreferences.getInstance();
     var dateStr = _prefs.getString('date');
     if (dateStr != null) {
