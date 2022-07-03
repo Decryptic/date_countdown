@@ -1,0 +1,3 @@
+An app for keeping track of the days since or until a given date.
+
+Date Countdown is a free, ad-free, & open source app for keeping track of the days since or until a given date. It is perfect for keeping track of the days since you were born, keeping track of your sobriety (days clean & sober), or keeping track of an important upcoming holiday, e.g. Christmas, anniversary etc. It is the most simple utility of its kind on the Google Play store: it only keeps track of one special day.
